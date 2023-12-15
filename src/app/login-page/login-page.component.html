@@ -1,0 +1,81 @@
+<div style="width: 100%; height: 100%" class="bg-white">
+  <form [formGroup]="loginData" (ngSubmit)="loginDataFunc()">
+    <div style="position: relative; top: 120px" class="py-16">
+      <div
+        class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
+      >
+        <div
+          class="hidden lg:block lg:w-1/2 bg-cover"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+          "
+        ></div>
+        <div class="w-full p-8 lg:w-1/2 bg-slate-800">
+          <h1 class="text-xl text-white text-center">Welcome back!</h1>
+          <h4 class="text-xl mx-3 text-white text-center" style="color: red">
+            {{ msg }}
+          </h4>
+
+          <div class="mt-4">
+            <label class="block text-white text-sm font-bold mb-2"
+              >Email Address</label
+            >
+            <input
+              class="bg-gray-200 text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
+              type="email"
+              formControlName="Email"
+            />
+            <p
+              style="color: red; margin-top: 3px"
+              class="text-sm"
+              *ngIf="
+                loginData.controls['Email']?.invalid &&
+                loginData.controls['Email']?.touched
+              "
+            >
+              Email Is Required!
+            </p>
+          </div>
+          <div class="mt-4">
+            <div class="flex justify-between">
+              <label class="block text-white text-sm font-bold mb-2"
+                >Password</label
+              >
+            </div>
+            <input
+              class="bg-gray-200 text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
+              type="password"
+              formControlName="Password"
+            />
+            <p
+              style="color: red; margin-top: 3px"
+              class="text-sm"
+              *ngIf="
+                loginData.controls['Password']?.invalid &&
+                loginData.controls['Password']?.touched
+              "
+            >
+              Password Is Required!
+            </p>
+          </div>
+          <div class="mt-8">
+            <button
+              [disabled]="loginData.invalid"
+              type="submit"
+              class="bg-white text-black font-bold py-2 px-4 w-full rounded hover:bg-gray-600"
+            >
+              Login
+            </button>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="border-b w-1/5 md:w-1/4"></span>
+            <a routerLink="/register-page" class="text-xs text-white uppercase"
+              >Create A Account ?</a
+            >
+            <span class="border-b w-1/5 md:w-1/4"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

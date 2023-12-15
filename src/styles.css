@@ -1,3 +1,4 @@
+
 body{
     font-family:Geneva, Verdana, sans-serif;
     background-repeat: no-repeat, repeat;
@@ -13,3 +14,5 @@ body{
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

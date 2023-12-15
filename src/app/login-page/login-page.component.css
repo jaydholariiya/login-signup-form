@@ -1,0 +1,30 @@
+.div-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; 
+}
+
+.form-main{
+    width: 60%;
+    height: 60%;
+    border: 1px solid white;
+    border-radius: 13px ;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    margin: 40px;
+    padding: 50px;
+}
+
+.any{
+    margin-top : 5px;
+}
+.head-img-box {
+    margin: -50px;
+    margin-bottom: 2rem;  
+}
+.imag-cover{
+   
+    width: 50%;
+}

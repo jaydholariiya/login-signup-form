@@ -18,17 +18,22 @@
     <li class="lileft lileft5">Features</li>
     <li class="lileft lileft6">Demo</li>
 
-    <li class="lileft lileft1"></li>
+    @if (localStroageData) {
+    <li class="liright liright1" routerLink="/" (click)="removeLocalData()">
+      LogOut
+    </li>
+    }@else {
     <li class="liright liright1">
       <a
-        style="color: white; text-decoration: none"
+        style="color: white; text-decoration: none; margin-left: 100px"
         routerLink="/register-page"
       >
         Register
       </a>
     </li>
-    <li class="liright liright1">Login</li>
-    <li class="liright liright2">Cart</li>
+
+    <li class="liright liright1" routerLink="/login-page">Login</li>
+    }
   </ul>
 
   <div class="center">
