@@ -2,7 +2,7 @@
   <form
     class="form-main"
     [formGroup]="registerFormFill"
-    (ngSubmit)="dataSubmit()"
+    (ngSubmit)="UpdateData(registerFormFill.value)"
   >
     <div class="head-img-box">
       <img
@@ -173,7 +173,10 @@
       >
 
       <div class="anyflex flex gap-4 items-center mb-4 flex-wrap">
-        <div class="flex items-center" *ngFor="let checkbox of checkBox">
+        <div
+          class="flex items-center"
+          *ngFor="let checkbox of DataPerID.CheckboxValues"
+        >
           <input
             id="checkbox"
             type="checkbox"
@@ -181,6 +184,7 @@
             (change)="data($event.target)"
             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
           />
+
           <label
             for="default-checkbox"
             class="px-3 py-1 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -279,6 +283,7 @@
           class="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
           aria-describedby="file_input_help"
           (change)="fileUploadChange($event.target)"
+          formControlName="File"
           id="file_input"
           type="file"
         />
@@ -295,3 +300,9 @@
     <a routerLink="/login-page" class="px-4 py-2">You Have Alredy Login ?</a>
   </form>
 </div>
+<button
+  routerLink="/get-data"
+  class="mx-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+>
+  Get The Data
+</button>

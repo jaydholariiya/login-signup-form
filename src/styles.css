@@ -1,18 +1,23 @@
+body {
+  font-family: Geneva, Verdana, sans-serif;
+  background-repeat: no-repeat, repeat;
 
-body{
-    font-family:Geneva, Verdana, sans-serif;
-    background-repeat: no-repeat, repeat;
-
-    background-image: url("../../../design/ben-sweet-2LowviVHZ-E-unsplash.jpg");
-     background-color: rgba(201, 240, 189, 0.5);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: luminosity;
-    
-
+  background-image: url("../../../design/ben-sweet-2LowviVHZ-E-unsplash.jpg");
+  background-color: rgba(201, 240, 189, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: luminosity;
 }
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -14,10 +14,7 @@ import { CommonModule } from '@angular/common';
 export class FirstPageComponent {
   localStroageData: any = localStorage.getItem('userData');
   constructor(private router: Router) {}
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-  }
+  ngOnInit(): void {}
 
   removeLocalData() {
     localStorage.removeItem('userData');

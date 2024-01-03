@@ -10,7 +10,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserDataService } from '../services/user-data.service';
-
 import { NgToastModule } from 'ng-angular-popup';
 import { NgToastService } from 'ng-angular-popup';
 import { RouterModule } from '@angular/router';
@@ -30,8 +29,6 @@ import { RouterModule } from '@angular/router';
 })
 export class RegisterPageComponent {
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.userService.reloadUser();
   }
   gender: any = ['Male', 'Female'];
@@ -73,7 +70,6 @@ export class RegisterPageComponent {
     console.warn(this.dataPush);
     this.registerFormFill.get('CheckboxValues').setValue(this.dataPush);
   }
-
   fileUploadChange(target: any) {
     let targetInput = target;
     const FileData =

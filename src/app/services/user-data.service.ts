@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -10,7 +10,12 @@ import { BehaviorSubject } from 'rxjs';
 export class UserDataService {
   authValue = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private routing: ActivatedRoute
+  ) {}
+
   addUserData(data: any) {
     return this.http.post('http://localhost:3000/RegistraionForm', data, {
       observe: 'response',
@@ -18,6 +23,20 @@ export class UserDataService {
   }
   GetUserData() {
     return this.http.get('http://localhost:3000/RegistraionForm');
+  }
+
+  getDataUsingID(id: any) {
+    return this.http.get(`http://localhost:3000/RegistraionForm/${id}`);
+  }
+  deleteData(id: any) {
+    return this.http.delete(`http://localhost:3000/RegistraionForm/${id}`);
+  }
+  updateDataPerID(product: any) {
+    return this.http.patch(
+      `http://localhost:3000/RegistraionForm/${product.id}`,
+      product,
+      { observe: 'response' }
+    );
   }
 
   loginUser(loginData: any) {
